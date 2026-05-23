@@ -102,104 +102,57 @@ function HeroCard() {
 
       {/* Name and Info/Photo block */}
       <div className="relative z-10 mt-8 md:my-auto">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-16 w-full">
-          {/* Left Column: Info Card and Details */}
-          <div className="flex-1 flex flex-col gap-6 w-full">
-            {/* Glassmorphism name card */}
+        {/* Top row: Name card (left) + Photo (right) — side by side on all screens */}
+        <div className="flex flex-row items-start justify-between gap-3 lg:gap-16 w-full mb-4 lg:mb-6">
+          {/* Glassmorphism name card */}
+          <div style={{
+            background: "rgba(255,255,255,0.05)",
+            backdropFilter: "blur(20px)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 16,
+            padding: "28px 36px",
+            display: "inline-block",
+            boxShadow: "0 8px 40px rgba(124,58,237,0.2)",
+            position: "relative",
+            overflow: "hidden",
+            alignSelf: "flex-start",
+            flex: 1,
+            minWidth: 0,
+          }}>
+            {/* Purple corner accent */}
             <div style={{
-              background: "rgba(255,255,255,0.05)",
-              backdropFilter: "blur(20px)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: 16,
-              padding: "28px 36px",
-              display: "inline-block",
-              maxWidth: "100%",
-              boxShadow: "0 8px 40px rgba(124,58,237,0.2)",
-              position: "relative",
-              overflow: "hidden",
-              alignSelf: "flex-start",
-            }}>
-              {/* Purple corner accent */}
-              <div style={{
-                position: "absolute", left: -2, top: "20%", bottom: "20%",
-                width: 4, borderRadius: 4,
-                background: "linear-gradient(to bottom, #7C3AED, #2563EB)",
-              }} />
-              <div style={{
-                position: "absolute", top: 12, right: 16,
-                width: 60, height: 2,
-                background: "linear-gradient(to right, #7C3AED, #2563EB)",
-                borderRadius: 2,
-              }} />
-              <div style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(32px, 8vw, 64px)",
-                color: "#FFFFFF",
-                lineHeight: 1.05,
-                letterSpacing: -1,
-              }}>MAHMUDOV</div>
-              <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: "clamp(28px, 7vw, 56px)",
-                background: "linear-gradient(135deg, #A78BFA, #60A5FA)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                lineHeight: 1.1,
-              }}>Rahmonbergan</div>
-            </div>
-
-            {/* Bio + contacts row */}
-            <div className="flex flex-col md:flex-row gap-4 w-full">
-              <div style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 12,
-                padding: "16px 20px",
-                flex: 1,
-              }}>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.5)" }}>
-                  Full-stack developer passionate about building modern, scalable, and user-focused web applications using NestJS, React 19, and PostgreSQL. Focused on clean architecture, performance, and real-world solutions.
-                </p>
-              </div>
-
-              <div style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 12,
-                padding: "12px 20px",
-                minWidth: 260,
-                flex: 1,
-              }}>
-                {[
-                  { icon: "📞", val: "+998 90 701 21 61", href: "tel:+998907012161" },
-                  { icon: "✉", val: "rahmonbergan04@gmail.com", href: "mailto:rahmonbergan04@gmail.com" },
-                  { icon: "🌐", val: "Najot Ta'lim · FDTU", badge: "Hozir" },
-                ].map(({ icon, val, href, badge }) => (
-                  <div key={val} className="flex items-center gap-3 py-2 border-b border-white/5 last:border-0">
-                    <span className="text-sm opacity-50">{icon}</span>
-                    {href
-                      ? <a href={href} style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.6)" }}>{val}</a>
-                      : <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.45)", flex: 1 }}>{val}</span>
-                    }
-                    {badge && (
-                      <span style={{
-                        background: "rgba(124,58,237,0.4)", border: "1px solid rgba(124,58,237,0.6)",
-                        borderRadius: 6, padding: "2px 8px",
-                        fontFamily: "'Inter', sans-serif", fontSize: 9, color: "#A78BFA", letterSpacing: 1,
-                      }}>{badge}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+              position: "absolute", left: -2, top: "20%", bottom: "20%",
+              width: 4, borderRadius: 4,
+              background: "linear-gradient(to bottom, #7C3AED, #2563EB)",
+            }} />
+            <div style={{
+              position: "absolute", top: 12, right: 16,
+              width: 60, height: 2,
+              background: "linear-gradient(to right, #7C3AED, #2563EB)",
+              borderRadius: 2,
+            }} />
+            <div style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(32px, 8vw, 64px)",
+              color: "#FFFFFF",
+              lineHeight: 1.05,
+              letterSpacing: -1,
+            }}>MAHMUDOV</div>
+            <div style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(28px, 7vw, 56px)",
+              background: "linear-gradient(135deg, #A78BFA, #60A5FA)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              lineHeight: 1.1,
+            }}>Rahmonbergan</div>
           </div>
 
-          {/* Right Column: Premium Photo Showcase Card */}
+          {/* Right: Premium Photo Showcase Card */}
           <div className="relative flex-shrink-0" style={{ animation: "float 6s ease-in-out infinite" }}>
-            {/* Ambient background glow */}
             <div style={{
               position: "absolute",
               inset: -10,
@@ -208,14 +161,12 @@ function HeroCard() {
               borderRadius: 24,
               opacity: 0.85,
             }} />
-
-            {/* Premium glass frame with neon hover shadow */}
             <div style={{
               position: "relative",
-              width: "250px",
-              height: "300px",
+              width: "clamp(110px, 28vw, 250px)",
+              height: "clamp(140px, 35vw, 300px)",
               borderRadius: 24,
-              padding: "12px",
+              padding: "8px",
               background: "rgba(255, 255, 255, 0.03)",
               backdropFilter: "blur(30px)",
               border: "1px solid rgba(255, 255, 255, 0.12)",
@@ -239,6 +190,51 @@ function HeroCard() {
                 }}
               />
             </div>
+          </div>
+        </div>
+
+        {/* Bio + contacts row — full width, completely unchanged */}
+        <div className="flex flex-col md:flex-row gap-4 w-full">
+          <div style={{
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 12,
+            padding: "16px 20px",
+            flex: 1,
+          }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.5)" }}>
+              Full-stack developer passionate about building modern, scalable, and user-focused web applications using NestJS, React 19, and PostgreSQL. Focused on clean architecture, performance, and real-world solutions.
+            </p>
+          </div>
+
+          <div style={{
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 12,
+            padding: "12px 20px",
+            minWidth: 260,
+            flex: 1,
+          }}>
+            {[
+              { icon: "📞", val: "+998 90 701 21 61", href: "tel:+998907012161" },
+              { icon: "✉", val: "rahmonbergan04@gmail.com", href: "mailto:rahmonbergan04@gmail.com" },
+              { icon: "🌐", val: "Najot Ta'lim · FDTU", badge: "Hozir" },
+            ].map(({ icon, val, href, badge }) => (
+              <div key={val} className="flex items-center gap-3 py-2 border-b border-white/5 last:border-0">
+                <span className="text-sm opacity-50">{icon}</span>
+                {href
+                  ? <a href={href} style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.6)" }}>{val}</a>
+                  : <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.45)", flex: 1 }}>{val}</span>
+                }
+                {badge && (
+                  <span style={{
+                    background: "rgba(124,58,237,0.4)", border: "1px solid rgba(124,58,237,0.6)",
+                    borderRadius: 6, padding: "2px 8px",
+                    fontFamily: "'Inter', sans-serif", fontSize: 9, color: "#A78BFA", letterSpacing: 1,
+                  }}>{badge}</span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
