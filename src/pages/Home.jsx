@@ -9,6 +9,7 @@ const SKILLS = [
   { name: "Socket.io / REST", pct: 88 },
   { name: "MongoDB + Mongoose", pct: 85 },
   { name: "React 19", pct: 82 },
+  { name: "Docker", pct: 82 },
   { name: "Tailwind CSS", pct: 80 },
   { name: "Python / SQL", pct: 78 },
 ];
@@ -321,7 +322,7 @@ function SkillsCard() {
 
         {/* Tag cloud */}
         <div className="flex flex-wrap gap-[5px] mt-2">
-          {["TypeScript", "JavaScript", "SQL", "Python", "Node.js", "Express.js", "Nest.js", "React 19", "Vite", "Tailwind CSS", "MUI", "Axios", "REST", "Socket.io", "MongoDB", "PostgreSQL", "MySQL", "Mongoose ODM", "Prisma ORM", "GitHub", "Capacitor"].map(t => (
+          {["TypeScript", "JavaScript", "SQL", "Python", "Node.js", "Express.js", "Nest.js", "React 19", "Vite", "Tailwind CSS", "MUI", "Axios", "REST", "Socket.io", "MongoDB", "PostgreSQL", "MySQL", "Mongoose ODM", "Prisma ORM", "GitHub", "Capacitor", "Docker"].map(t => (
             <span key={t} style={{
               fontFamily: "'Inter',sans-serif", fontSize: 9, letterSpacing: 1,
               padding: "3px 10px",
